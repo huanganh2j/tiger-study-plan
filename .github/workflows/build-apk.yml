@@ -46,12 +46,12 @@ jobs:
           
     - name: Create local.properties
       run: echo "sdk.dir=$ANDROID_HOME" > local.properties
-        
+      
     - name: List available tasks
-      run: ./gradlew tasks --all
-        
+      run: ./gradlew tasks --all --console=plain
+      
     - name: Build APK
-      run: ./gradlew assembleDebug --stacktrace
+      run: ./gradlew assembleDebug --stacktrace --console=plain
         
     - name: Upload APK
       uses: actions/upload-artifact@v4
