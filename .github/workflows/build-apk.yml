@@ -21,14 +21,20 @@ jobs:
         
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3
+      
+    - name: Accept Android SDK licenses
+      run: |
+        echo y | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || true
+        echo y | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_HOME --licenses || true
         
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
       
     - name: Build APK
       run: |
-        ./gradlew clean
-        ./gradlew app:assembleDebug --stacktrace
+        ./gradlew --version
+        ./gradlew tasks
+        ./gradlew :app:assembleDebug --stacktrace
         
     - name: Upload APK
       uses: actions/upload-artifact@v4
