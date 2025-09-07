@@ -38,9 +38,7 @@ jobs:
       run: echo "sdk.dir=$ANDROID_HOME" > local.properties
       
     - name: Build APK
-      run: |
-        echo "Building APK..."
-        ./gradlew assembleDebug --stacktrace
+      run: ./gradlew :app:assembleDebug --stacktrace
         
     - name: Upload APK
       uses: actions/upload-artifact@v4
