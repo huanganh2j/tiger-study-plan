@@ -23,25 +23,11 @@ jobs:
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3
       
-    - name: Accept Android SDK licenses
-      run: |
-        yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses
-        
-    - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
+    - name: Make build script executable
+      run: chmod +x build-apk.sh
       
-    - name: Create local.properties
-      run: echo "sdk.dir=$ANDROID_HOME" > local.properties
-      
-    - name: Debug info
-      run: |
-        echo "Current directory: $(pwd)"
-        echo "Gradle wrapper exists: $(ls -la gradlew)"
-        echo "Project structure:"
-        ls -la
-        
-    - name: Build APK
-      run: ./gradlew :app:assembleDebug --stacktrace
+    - name: Run build script
+      run: ./build-apk.sh
         
     - name: Upload APK
       uses: actions/upload-artifact@v4
