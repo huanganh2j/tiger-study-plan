@@ -47,9 +47,17 @@ jobs:
     - name: Create local.properties
       run: echo "sdk.dir=$ANDROID_HOME" > local.properties
       
+    - name: Grant execute permission
+      run: chmod +x ./gradlew
+      
+    - name: Check Gradle wrapper
+      run: ls -la ./gradlew
+      
+    - name: Check available tasks
+      run: ./gradlew tasks --all
+      
     - name: Build APK
-      run: |
-        ./gradlew assembleDebug --stacktrace
+      run: ./gradlew assembleDebug --stacktrace
         
     - name: Upload APK
       uses: actions/upload-artifact@v4
