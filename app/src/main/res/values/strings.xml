@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">小虎学习计划</string>
+    
+    <!-- 主界面 -->
+    <string name="today_plans">今日计划</string>
+    <string name="add_plan">添加计划</string>
+    <string name="history">历史记录</string>
+    <string name="settings">设置</string>
+    
+    <!-- 语音提示 -->
+    <string name="voice_welcome_with_plans">小朋友，今天有%d个学习计划哦！</string>
+    <string name="voice_welcome_no_plans">今日还没有计划呢，要添加一个吗？</string>
+    <string name="voice_start_reminder">小朋友，该做%s了哦！</string>
+    <string name="voice_end_reminder">%s已经到时啦，完成了吗？</string>
+    <string name="voice_next_plan">距离下个事项%s还有%d分钟呢！</string>
+    <string name="voice_all_done">哇，真棒！今天的计划都完成了呢！</string>
+    <string name="voice_export_success">导出成功啦！</string>
+    <string name="voice_not_understand">没听清楚呢，可以再说一遍吗？</string>
+    <string name="voice_time_conflict">哎呀，这个时间和%s冲突了呢，要修改时间吗？</string>
+    <string name="voice_time_error">结束时间不能早于开始时间哦，请重新说一遍</string>
+    <string name="voice_ask_am_pm">请确认是上午还是下午？</string>
+    <string name="voice_ask_repeat">重复情况是：当天、学习日、每天，请选择</string>
+    <string name="voice_ask_modify_type">修改事项名称还是时间？</string>
+    <string name="voice_confirm_delete">是否确认删除%s计划？</string>
+    
+    <!-- 计划状态 -->
+    <string name="completed">已完成</string>
+    <string name="not_completed">未完成</string>
+    <string name="in_progress">进行中</string>
+    
+    <!-- 重复类型 -->
+    <string name="repeat_once">当天</string>
+    <string name="repeat_weekdays">学习日</string>
+    <string name="repeat_daily">每天</string>
+    
+    <!-- 权限设置 -->
+    <string name="permission_title">权限设置</string>
+    <string name="permission_record_audio">录音权限</string>
+    <string name="permission_storage">存储权限</string>
+    <string name="permission_background">后台运行权限</string>
+    <string name="permission_battery">忽略电池优化</string>
+    <string name="permission_guide_title">重要提示</string>
+    <string name="permission_guide_message">为了确保提醒功能正常工作，请在设置中：\n\n1. 允许后台运行\n2. 忽略电池优化\n\n点击确定前往设置</string>
+    
+    <!-- 按钮文本 -->
+    <string name="btn_ok">确定</string>
+    <string name="btn_cancel">取消</string>
+    <string name="btn_export">导出记录</string>
+    <string name="btn_start_voice">开始语音</string>
+    <string name="btn_stop_voice">停止语音</string>
+    <string name="btn_delete">删除</string>
+    <string name="btn_modify">修改</string>
+    
+    <!-- 时间格式 -->
+    <string name="time_format_24">HH:mm</string>
+    <string name="date_format">yyyy年MM月dd日</string>
+    <string name="date_time_format">MM月dd日 HH:mm</string>
+    
+</resources>
