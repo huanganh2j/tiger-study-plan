@@ -21,11 +21,14 @@ jobs:
         
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3
-      
+      with:
+        api-level: 33
+        build-tools: 33.0.2
+        
     - name: Accept Android SDK licenses
       run: |
-        echo y | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || true
-        echo y | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_HOME --licenses || true
+        yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses
+        $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "platforms;android-33" "build-tools;33.0.2"
         
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
@@ -44,10 +47,9 @@ jobs:
       run: |
         echo "sdk.dir=$ANDROID_HOME" > local.properties
         
-    - name: Build APK
+    - name: Clean and Build APK
       run: |
-        ./gradlew --version
-        ./gradlew tasks --all
+        ./gradlew clean
         ./gradlew assembleDebug --stacktrace --info
         
     - name: Upload APK
