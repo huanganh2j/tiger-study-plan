@@ -41,7 +41,7 @@ jobs:
     - name: Clean and Build APK
       run: |
         ./gradlew clean
-        ./gradlew assembleDebug --stacktrace
+        ./gradlew assembleDebug --stacktrace --info --debug
         
     - name: Upload APK
       uses: actions/upload-artifact@v4
