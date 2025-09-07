@@ -45,11 +45,13 @@ jobs:
           ${{ runner.os }}-gradle-
           
     - name: Create local.properties
-      run: |
-        echo "sdk.dir=$ANDROID_HOME" > local.properties
+      run: echo "sdk.dir=$ANDROID_HOME" > local.properties
+        
+    - name: List available tasks
+      run: ./gradlew tasks --all
         
     - name: Build APK
-      run: ./gradlew app:assembleDebug --stacktrace
+      run: ./gradlew assembleDebug --stacktrace
         
     - name: Upload APK
       uses: actions/upload-artifact@v4
